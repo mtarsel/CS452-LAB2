@@ -4,7 +4,8 @@ int counter=0;//counter to increase how many vertices are going to be drawn at a
 
 GLuint vaoID, vboID[2];//vao and vbo names
 
-GLfloat vertexarray[]={0.5f,-0.5f,0.0f,0.0f,0.5f,0.0f,-0.5f,-0.5f,0.0f,
+GLfloat vertexarray[]={0.5f,-0.5f,0.0f,0.0f,
+			0.5f,0.0f,-0.5f,-0.5f,0.0f,
                        -0.6f,0.2f,0.0f,
                        0.0f,0.2f,-0.6f,
                        };
