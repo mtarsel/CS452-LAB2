@@ -1,34 +1,24 @@
-#include "initShaders.h"
+#include "lab2.h"
 using namespace std;
 int counter=0;//counter to increase how many vertices are going to be drawn at a given time
 
 GLuint vaoID, vboID[2];//vao and vbo names
 
-GLfloat vertexarray[]={
-
-		   /* 1.5f,1.5f,2.0f,//vertice array
-			1.0f,0.0f,0.0f,
-                      // 0.5f,0.5f,-0.0f, 
-                       0.0f,1.0f,0.0f,
-                       -0.5f,0.5f,0.0f, 
-                       -1.0f,0.0f,0.0f,
-                       -0.5f,0.5f,0.0f,
-                      	0.0f,1.0f,0.0f*/
-0.0, 1.0, -1.0, -1.0, -1.0, -1.0, 1.0, -1.0, -1.0,
-0.0, 1.0, -1.0, -1.0, -1.0, -1.0, 1.0, -1.0, -1.0,
-0.0, 1.0, -1.0, -1.0, -1.0, -1.0, 1.0, -1.0, -1.0,
-0.0, 1.0, -1.0, -1.0, -1.0, -1.0, 1.0, -1.0, -1.0,
+GLfloat vertexarray[]={0.5f,-0.5f,0.0f,0.0f,0.5f,0.0f,-0.5f,-0.5f,0.0f,
+                       -0.6f,0.2f,0.0f,
+                       0.0f,0.2f,-0.6f,
                        };
                        
-GLfloat colorarray[]={1.0f,1.0f,0.0f,1.0f,//color array
-                       0.0f,1.0f,0.0f,1.0f,
-                       1.0f,0.0f,1.0f,1.0f,
-                       0.5f,0.5f,1.0f,1.0f,
-                       1.0f,0.5f,0.5f,1.0f,
-//                       0.0f,1.0f,0.5f,1.0f,
+GLfloat colorarray[]={
+		       1.0f,0.5f,0.0f,1.0f,//color array
+                       1.0f,1.0f,0.0f,1.0f,
+                       1.0f,1.0f,0.0f,1.0f,
+                       1.0f,1.0f,0.0f,1.0f,
+                       1.0f,1.0f,0.0f,1.0f,
+                       1.0f,1.0f,0.0f,1.0f,
                        0.5f,0.5f,0.5f,1.0f,
                        1.0f,0.5f,1.0f,1.0f
-                       };                       
+                      };                       
 
 void init(){
 
@@ -58,7 +48,7 @@ void init(){
 
 void drawscene(){
   glClear(GL_COLOR_BUFFER_BIT);
-  glDrawArrays(GL_POLYGON,0,3+(counter%6));
+  glDrawArrays(GL_TRIANGLE_FAN,0,3+(counter%7));
   glFlush();
 }
 
@@ -75,7 +65,7 @@ void mousepress(int button, int state, int x, int y){
 int main(int argc,char ** argv){
 
   glutInit(&argc, argv);
-  glutCreateWindow("Shapes");//creates the window with the specified name
+  glutCreateWindow("Schwarz Lab 2-It's kinda a house");//creates the window with the specified name
   
   //initializes glew
   glewExperimental=GL_TRUE;
@@ -86,8 +76,8 @@ int main(int argc,char ** argv){
   
   glutInitContextVersion(4, 3);//specifies the version of opengl
   glutInitContextProfile(GLUT_CORE_PROFILE|GLUT_COMPATIBILITY_PROFILE);//specifies what profile your using
-	
-	init();
+    
+    init();
 
   //retruns what version of opengl and glsl your computer can use
   const GLubyte* version=glGetString(GL_SHADING_LANGUAGE_VERSION);
