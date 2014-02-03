@@ -10,13 +10,13 @@ GLfloat vertexarray[]={0.5f,-0.5f,0.0f,0.0f,0.5f,0.0f,-0.5f,-0.5f,0.0f,
                        };
                        
 GLfloat colorarray[]={
-		       1.0f,0.5f,0.0f,1.0f,//color array
+		       1.0f,1.5f,1.0f,1.0f,//color array
+                       1.0f,0.0f,0.0f,1.0f,
+                       1.0f,1.0f,0.0f,1.0f,
+                       1.0f,0.0f,0.0f,1.0f,
                        1.0f,1.0f,0.0f,1.0f,
                        1.0f,1.0f,0.0f,1.0f,
-                       1.0f,1.0f,0.0f,1.0f,
-                       1.0f,1.0f,0.0f,1.0f,
-                       1.0f,1.0f,0.0f,1.0f,
-                       0.5f,0.5f,0.5f,1.0f,
+                       0.5f,1.5f,0.5f,1.0f,
                        1.0f,0.5f,1.0f,1.0f
                       };                       
 
@@ -65,7 +65,7 @@ void mousepress(int button, int state, int x, int y){
 int main(int argc,char ** argv){
 
   glutInit(&argc, argv);
-  glutCreateWindow("Schwarz Lab 2-It's kinda a house");//creates the window with the specified name
+  glutCreateWindow("Mick's Shape");//creates the window with the specified name
   
   //initializes glew
   glewExperimental=GL_TRUE;
