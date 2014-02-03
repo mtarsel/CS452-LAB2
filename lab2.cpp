@@ -1,12 +1,6 @@
 #include "lab2.h"
 using namespace std;
 
-// ----------------------------------------------------------------------------
-// - initShaders takes in a pointer to a ShaderInfo struct.  It uses this
-// pointer
-// -   to create a vector of these shaders.  With this vector, the function
-// -   creates and uses a program created from these shaders.
-// ----------------------------------------------------------------------------
 void initShaders(ShaderInfo* shaders)
 {
     ShaderInfo* shade=shaders;
@@ -24,10 +18,6 @@ void initShaders(ShaderInfo* shaders)
     glUseProgram(program);  //installs a program object as part of current rendering state
 }
 
-// ----------------------------------------------------------------------------
-// - inputShader reads in and returns the shader file denoted by the inputted
-//    filename.
-// ----------------------------------------------------------------------------
 const GLchar* inputShader(const char* filename)
 {
     FILE* fshade = fopen(filename, "rb");//opens file
@@ -60,12 +50,6 @@ const GLchar* inputShader(const char* filename)
   return const_cast<const GLchar*>(shadingSource);//overloads the const so the value with change per file
 }
 
-// ----------------------------------------------------------------------------
-// - createShader takes the shader (presumably read in from inputShader) and
-// -   compiles the shader.  If the shader fails to compile, a log is printed
-// -   to stderr.  Regardless of whether the compile was successful, the shader
-// -   GLuint is returned.
-// ----------------------------------------------------------------------------
 GLuint createShader(GLenum type, const GLchar* shadeSource)
 {
     GLuint shader = glCreateShader(type);//create shader based on type GL_VERTEX_SHADER or GL_FRAGMENT_SHADER
@@ -95,13 +79,6 @@ GLuint createShader(GLenum type, const GLchar* shadeSource)
     return shader;//self explanatory
 }
 
-// ----------------------------------------------------------------------------
-// - createProgram takes in a vector of shaders.  A program is created, shaders
-// -   are attached, and attributes are bound to locations.  The program is
-// -   linked to your actual code (lab2.cpp) and is returned.  If the link
-// fails,
-// -   a log is written to stderr.
-// ----------------------------------------------------------------------------
 GLuint createProgram(const vector<GLuint> shadeList)
 {
     GLuint program = glCreateProgram();//creates your program

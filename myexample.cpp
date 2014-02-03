@@ -1,8 +1,8 @@
 #include "lab2.h"
 using namespace std;
-int counter=0;//counter to increase how many vertices are going to be drawn at a given time
+int counter=0;
 
-GLuint vaoID, vboID[2];//vao and vbo names
+GLuint vaoID, vboID[2];
 
 GLfloat vertexarray[]={0.5f,-0.5f,0.0f,0.0f,
 			0.5f,0.0f,-0.5f,-0.5f,0.0f,

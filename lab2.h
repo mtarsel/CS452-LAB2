@@ -1,9 +1,6 @@
 #ifndef LAB_2_INIT_SHADERS_H_
 #define LAB_2_INIT_SHADERS_H_
 
-// -----------------------
-// --- I N C L U D E S ---
-// -----------------------
 #include "GL/glew.h"
 #include "GL/freeglut.h"
 #include "GL/gl.h"
