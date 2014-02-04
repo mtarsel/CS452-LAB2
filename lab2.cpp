@@ -87,7 +87,7 @@ GLuint createProgram(const vector<GLuint> shadeList)
   
     glBindAttribLocation(program, 0, "in_position");	//binds the position to index 0
     glBindAttribLocation(program, 1, "in_color");	//binds the color to index 1
-    glLinkProgram(program);//links program to your program //weird
+    glLinkProgram(program);//links program to your program
   
     GLint linkStatus;//status for linking variable
     glGetProgramiv(program, GL_LINK_STATUS, &linkStatus);//returns the status of linking the program into the variable

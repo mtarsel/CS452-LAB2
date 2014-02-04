@@ -1,0 +1,28 @@
+void initShaders:
+    input: ShaderInfo* shaders
+    no output 
+    -takes in a pointer to a ShaderInfo struct which is uses to create a vector of 
+	vectors. This vector, the function creates and uses a program created from these shaders.
+
+
+const GLchar* inputShader: 
+    input: filename (file)
+    output: shader file
+    -reads a file "rb" into a shader file
+
+
+GLuint createShader:
+    input: GLenum type, GLchar* shadeSource
+    output: GLuint
+    -compiles the shader and uses error checking to ensure it compiles correctly
+
+GLuint createProgram:
+    input:vector shadeList
+    output:GLuint program
+    -attaches shader to program and links program and variables. Uses error checking to ensure proper
+	linking. Color and position attributes locations are initialized here.
+
+It reads in a shader and puts the shaders into a list. It creates a program and
+saves the shader files into one variable. Binds and links position, color, and
+program while using error checking. The vertices are drawn and then color is
+added. 
