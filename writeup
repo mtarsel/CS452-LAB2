@@ -5,7 +5,7 @@ void initShaders:
 	vectors. This vector, the function creates and uses a program created from these shaders.
 
 
-const GLchar* inputShader: 
+const GLchar* loadShader: 
     input: filename (file)
     output: shader file
     -reads a file "rb" into a shader file
