@@ -1,4 +1,4 @@
-un: myexample.cpp
+run: myexample.cpp
 	g++ myexample.cpp -lglut -lGLU -lGL -lGLEW -g
         
 clean: 
